@@ -41,7 +41,7 @@ public class HealthBehavior : MonoBehaviour
 
         _isAlive = _health > 0;
 
-        if (IsAlive && _destroyOnDeath)
+        if (!IsAlive && _destroyOnDeath)
             Destroy(gameObject);
     }
 }

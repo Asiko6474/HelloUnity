@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4559387563348788325}
   - component: {fileID: 5616352816412458061}
   - component: {fileID: 3844158126243022224}
+  - component: {fileID: 2249939178295756788}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -96,6 +97,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2249939178295756788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504042040300128167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3d7d282923ac6408e636426be18f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gun: {fileID: 0}
+  _bulletCooldown: 5
+  _ammo: 0
+  _infiniteAmmo: 1
 --- !u!1 &1173878290993055558
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,13 +235,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2645744969855485343}
-  m_LocalRotation: {x: 0.7356026, y: -0, z: -0, w: 0.6774134}
-  m_LocalPosition: {x: 0, y: 0.0000029206276, z: 0.322999}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0000000012842403, y: 0.0000029206276, z: 0.322999}
   m_LocalScale: {x: 0.34104, y: 0.52248, z: 0.22536}
-  m_Children: []
+  m_Children:
+  - {fileID: 5467808597924391798}
   m_Father: {fileID: 7782631992322123653}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 94.716, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &1133592703620634459
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -288,3 +306,49 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &5146250985364466428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5467808597924391798}
+  - component: {fileID: 5466272495346489429}
+  m_Layer: 0
+  m_Name: ProjectileSpanwer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5467808597924391798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146250985364466428}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.05, z: -0.05}
+  m_LocalScale: {x: 2.9322073, y: 4.3981414, z: 1.9213346}
+  m_Children: []
+  m_Father: {fileID: 3083297152496876196}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &5466272495346489429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146250985364466428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55f63bca9d60d0458287d6d1e72056a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletRef: {fileID: 3922935628986495434, guid: 7add578552c4d2741ac99fcd23b87a8d, type: 3}
+  _bulletForce: 10
+  _owner: {fileID: 2645744969855485343}

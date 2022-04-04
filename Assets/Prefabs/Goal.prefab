@@ -109,3 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _isAlive: 1
+  _destroyOnDeath: 0
+  Failure: {fileID: 0}
